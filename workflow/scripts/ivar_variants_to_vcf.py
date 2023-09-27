@@ -71,7 +71,7 @@ def ivar_variants_to_vcf(FileIn,FileOut,passOnly=False,minAF=0):
                     FILTER='PASS'
                 else:
                     FILTER='FAIL'
-                INFO='DP='+line[11]
+                INFO='DP='+line[11]+';AF='+line[10]
                 FORMAT='GT:REF_DP:REF_RV:REF_QUAL:ALT_DP:ALT_RV:ALT_QUAL:ALT_FREQ'
                 SAMPLE='1:'+line[4]+':'+line[5]+':'+line[6]+':'+line[7]+':'+line[8]+':'+line[9]+':'+line[10]
                 oline = CHROM+'\t'+POS+'\t'+ID+'\t'+REF+'\t'+ALT+'\t'+QUAL+'\t'+FILTER+'\t'+INFO+'\t'+FORMAT+'\t'+SAMPLE+'\n'
